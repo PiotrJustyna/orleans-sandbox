@@ -1,5 +1,6 @@
 # notes
 - [notes](#notes)
+  - [resources](#resources)
   - [turns](#turns)
   - [persistence](#persistence)
   - [timers](#timers)
@@ -8,6 +9,9 @@
   - [strong isolation](#strong-isolation)
   - [cooperative multitasking](#cooperative-multitasking)
   - [serialization](#serialization)
+
+## resources
+
 https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/Orleans-MSR-TR-2014-41.pdf
 
 ## turns
