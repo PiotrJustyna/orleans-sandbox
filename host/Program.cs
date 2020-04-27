@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace orleans_sandbox
+namespace OrleansSandbox.Host
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine(OrleansSandbox.Lib.Lib.Greet());
         }
     }
 }
