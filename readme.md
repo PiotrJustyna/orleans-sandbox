@@ -6,4 +6,4 @@
 ## resources
 
 * [notes](./notes.md)
-* [tutorisals](https://github.com/dotnet/orleans/tree/master/Samples)
+* [tutorials](https://github.com/dotnet/orleans/tree/master/Samples)
