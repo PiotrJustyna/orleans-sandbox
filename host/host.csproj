@@ -4,11 +4,17 @@
     <ProjectReference Include="..\lib\lib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0-preview.3.20215.2" />
+    <PackageReference Include="Microsoft.Orleans.OrleansRuntime" Version="3.1.6" />
+  </ItemGroup>
+
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>OrleansSandbox.Host</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
 </Project>
