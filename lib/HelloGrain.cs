@@ -1,13 +1,9 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using OrleansSandbox.Interfaces;
 
 namespace OrleansSandbox.Lib
 {
-  public interface IHello : Orleans.IGrainWithIntegerKey
-  {
-    Task<string> SayHello(string greeting);
-  }
-
   public class HelloGrain : Orleans.Grain, IHello
   {
     private readonly ILogger logger;
