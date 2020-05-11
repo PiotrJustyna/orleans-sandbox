@@ -15,7 +15,9 @@ namespace OrleansSandbox.Lib
 
     Task<string> IHello.SayHello(string greeting)
     {
-      logger.LogInformation($"SayHello message received: greeting = '{greeting}'");
+      // 2020-05-11 PJ:
+      // Only use the (console) logger for low numbers of client messages.
+      // logger.LogInformation($"SayHello message received: greeting = '{greeting}'");
       return Task.FromResult($"You said: '{greeting}', I say: Hello!");
     }
   }

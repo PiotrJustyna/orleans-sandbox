@@ -76,3 +76,7 @@ RUN apt-get update \
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=dialog
+
+# 2020-05-11 PJ:
+# A custom piece of code resolving this category of issues: https://github.com/dotnet/sdk/issues/9180
+RUN mkdir -p '/usr/local/share/dotnet/sdk/NuGetFallbackFolder'

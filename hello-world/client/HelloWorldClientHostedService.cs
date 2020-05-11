@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -13,14 +14,24 @@ namespace OrleansSandbox.Client
 
     public HelloWorldClientHostedService(IClusterClient client)
     {
-      this._client = client;
+      _client = client;
     }
 
     public async Task StartAsync(CancellationToken cancellationToken)
     {
       var friend = this._client.GetGrain<IHello>(0);
-      var response = await friend.SayHello("Good morning, my friend!");
-      Console.WriteLine($"{response}");
+      var tasks = new List<Task>();
+
+      Console.WriteLine($"Hello world tasks starting...");
+
+      for (UInt32 i = 0; i < 10000; i++)
+      {
+        tasks.Add(friend.SayHello("Good morning, my friend!"));
+      }
+
+      await Task.WhenAll(tasks);
+
+      Console.WriteLine($"All hello world tasks finished.");
     }
 
     public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;

@@ -26,6 +26,7 @@ namespace OrleansSandbox.Client
       var attempt = 0;
       var maxAttempts = 100;
       var delay = TimeSpan.FromSeconds(1);
+
       return Client.Connect(async error =>
       {
         if (cancellationToken.IsCancellationRequested)
@@ -35,9 +36,11 @@ namespace OrleansSandbox.Client
 
         if (++attempt < maxAttempts)
         {
-          _logger.LogWarning(error,
-                    "Failed to connect to Orleans cluster on attempt {@Attempt} of {@MaxAttempts}.",
-                    attempt, maxAttempts);
+          _logger.LogWarning(
+            error,
+            "Failed to connect to Orleans cluster on attempt {@Attempt} of {@MaxAttempts}.",
+            attempt,
+            maxAttempts);
 
           try
           {
@@ -52,9 +55,11 @@ namespace OrleansSandbox.Client
         }
         else
         {
-          _logger.LogError(error,
-                    "Failed to connect to Orleans cluster on attempt {@Attempt} of {@MaxAttempts}.",
-                    attempt, maxAttempts);
+          _logger.LogError(
+            error,
+            "Failed to connect to Orleans cluster on attempt {@Attempt} of {@MaxAttempts}.",
+            attempt,
+            maxAttempts);
 
           return false;
         }
@@ -69,7 +74,9 @@ namespace OrleansSandbox.Client
       }
       catch (OrleansException error)
       {
-        _logger.LogWarning(error, "Error while gracefully disconnecting from Orleans cluster. Will ignore and continue to shutdown.");
+        _logger.LogWarning(
+          error,
+          "Error while gracefully disconnecting from Orleans cluster. Will ignore and continue to shutdown.");
       }
     }
 
