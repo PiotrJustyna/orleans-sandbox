@@ -29,6 +29,8 @@ namespace OrleansSandbox.Client
         tasks.Add(friend.SayHello("Good morning, my friend!"));
       }
 
+      Console.WriteLine($"All hello world tasks started.");
+
       await Task.WhenAll(tasks);
 
       Console.WriteLine($"All hello world tasks finished.");
