@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Threading.Tasks;
-using OrleansSandbox.Lib;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -8,7 +7,7 @@ using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 
-namespace OrleansSandbox.Host
+namespace OrleansSandbox.Silo
 {
   class Program
   {
@@ -22,10 +21,9 @@ namespace OrleansSandbox.Host
               .Configure<ClusterOptions>(options =>
               {
                 options.ClusterId = "dev";
-                options.ServiceId = "HelloWorldApp";
+                options.ServiceId = "PresenceApp";
               })
               .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
-              .ConfigureApplicationParts(parts => parts.AddApplicationPart(typeof(HelloGrain).Assembly).WithReferences())
               .AddMemoryGrainStorage(name: "ArchiveStorage");
           })
           .ConfigureServices(services =>

@@ -41,9 +41,9 @@ or F5, [ctrl/command]+F5 or whatever shortcut you use to run/debug your code.
 
 ### [hello-world](./hello-world/)
 
-* [run host](./hello-world/run-host.sh)
-* [run client](./hello-world/run-host.sh)
+* [run silo](./hello-world/run-silo.sh)
+* [run client](./hello-world/run-client.sh)
 
 ### [presence](./presence/)
 
-* [run host](./presence/run-host.sh)
+* [run silo](./presence/run-silo.sh)
