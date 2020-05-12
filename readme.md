@@ -3,6 +3,7 @@
   - [run](#run)
   - [examples](#examples)
     - [hello-world](#hello-world)
+    - [presence](#presence)
 
 # orleans sandbox.
 
@@ -42,3 +43,7 @@ or F5, [ctrl/command]+F5 or whatever shortcut you use to run/debug your code.
 
 * [run host](./hello-world/run-host.sh)
 * [run client](./hello-world/run-host.sh)
+
+### [presence](./presence/)
+
+* [run host](./presence/run-host.sh)
