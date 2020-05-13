@@ -9,7 +9,7 @@
           "type": "coreclr",
           "request": "launch",
           "preLaunchTask": "build",
-          "program": "${workspaceFolder}/host/bin/Debug/netcoreapp3.1/host.dll",
+          "program": "${workspaceFolder}/silo/bin/Debug/netcoreapp3.1/silo.dll",
           "args": [],
           "cwd": "${workspaceFolder}",
           "console": "internalConsole",

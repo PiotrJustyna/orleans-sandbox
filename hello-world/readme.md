@@ -1,6 +1,17 @@
-# client stats
+# readme
 
-## 10K requests
+This is a simple hello world example:
+
+* one silo - receive "hello world" messages, respond
+* one client - send a number of "hello world" messages
+
+The number of sent messages can vary and it helps evaluate the speed of the silo. See the stats below for various numbers of messages sent.
+
+Source example: https://github.com/dotnet/orleans/tree/master/Samples/3.0/HelloWorld
+
+## client stats
+
+### 10K requests
 
 ```
 info: Orleans.Runtime.ClientLogStatistics[100704]
@@ -64,7 +75,7 @@ info: Orleans.Runtime.ClientLogStatistics[100704]
       Serialization.BufferPool.InUse.CheckedOutAndNotCheckedIn_Buffers=0
 ```
 
-## 100K requests
+### 100K requests
 
 ```
 info: Orleans.Runtime.ClientLogStatistics[100704]
@@ -128,7 +139,7 @@ info: Orleans.Runtime.ClientLogStatistics[100704]
       Serialization.BufferPool.InUse.CheckedOutAndNotCheckedIn_Buffers=0
 ```
 
-## 1M requests
+### 1M requests
 
 ```
 info: Orleans.Runtime.ClientLogStatistics[100704]
