@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
+using OrleansSandbox.Grains;
 
 namespace OrleansSandbox.Silo
 {
@@ -24,6 +25,10 @@ namespace OrleansSandbox.Silo
                 options.ServiceId = "PresenceApp";
               })
               .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
+              .ConfigureApplicationParts(parts =>
+                parts
+                  .AddApplicationPart(typeof(GameGrain).Assembly)
+                  .WithReferences())
               .AddMemoryGrainStorage(name: "ArchiveStorage");
           })
           .ConfigureServices(services =>
