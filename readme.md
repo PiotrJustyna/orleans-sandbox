@@ -2,8 +2,6 @@
   - [build](#build)
   - [run](#run)
   - [examples](#examples)
-    - [hello-world](#hello-world)
-    - [presence](#presence)
 
 # orleans sandbox.
 
@@ -39,11 +37,6 @@ or F5, [ctrl/command]+F5 or whatever shortcut you use to run/debug your code.
 
 ## examples
 
-### [hello-world](./hello-world/)
+* [hello-world](./hello-world/)
 
-* [run silo](./hello-world/run-silo.sh)
-* [run client](./hello-world/run-client.sh)
-
-### [presence](./presence/)
-
-* [run silo](./presence/run-silo.sh)
+* [presence](./presence/)
