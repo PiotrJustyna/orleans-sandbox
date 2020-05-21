@@ -1,6 +1,4 @@
 - [orleans sandbox.](#orleans-sandbox)
-  - [build](#build)
-  - [run](#run)
   - [examples](#examples)
 
 # orleans sandbox.
@@ -15,25 +13,13 @@ https://dotnet.github.io/orleans/Documentation/tutorials_and_samples/index.html
 
 Samples can be opened and built both locally and in remote containers using e.g. vs code and the `remote-containers` plugin (which is the recommended option).
 
-## build
+All convenience scripts I use in the sandbox are shell scripts (`*.sh`). If you're not sure how to execute them on Windows, please consider using [git bash](https://git-scm.com/).
 
-To build the code locally or in a remote container, execute:
+Typically, there is more than one project per example to build and execute, so there are convenience scripts which should help build everything relatively easily:
 
-```bash
-dotnet build
-```
+* `build-*.sh`
 
-or [ctrl/command]+shift+b or whatever shortcut you use to build your code.
-
-## run
-
-To run the code locally or in a remote container, execute:
-
-```bash
-dotnet run
-```
-
-or F5, [ctrl/command]+F5 or whatever shortcut you use to run/debug your code.
+Where `build-all.sh`, as the name suggests, builds all projects relevant to any given example.
 
 ## examples
 
