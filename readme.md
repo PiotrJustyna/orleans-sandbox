@@ -25,4 +25,6 @@ Where `build-all.sh`, as the name suggests, builds all projects relevant to any 
 
 * [hello-world](./hello-world/)
 
+* [hello-world-timer](./hello-world-timer/)
+
 * [presence](./presence/)
