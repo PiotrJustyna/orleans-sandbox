@@ -8,11 +8,14 @@ namespace OrleansSandbox.Lib
 {
   public class HelloGrain : Orleans.Grain, IHello
   {
-    private readonly TimeSpan _dueTime = TimeSpan.FromSeconds(3);
-    private readonly TimeSpan _period = TimeSpan.FromSeconds(1);
     private readonly ILogger _logger;
-    private IDisposable _timer;
-    private byte _ticksNeeded = 5;
+    private readonly TimeSpan _dueTime = TimeSpan.FromSeconds(3);
+    private readonly TimeSpan _period1 = TimeSpan.FromSeconds(1);
+    private IDisposable _timer1;
+    private byte _ticksNeeded1 = 5;
+    private readonly TimeSpan _period2 = TimeSpan.FromSeconds(3);
+    private IDisposable _timer2;
+    private byte _ticksNeeded2 = 5;
 
     public HelloGrain(ILogger<HelloGrain> logger)
     {
@@ -21,30 +24,54 @@ namespace OrleansSandbox.Lib
 
     public override async Task OnActivateAsync()
     {
-      _timer = RegisterTimer(
-        asyncCallback: TimerCallback,
+      _timer1 = RegisterTimer(
+        asyncCallback: Timer1Callback,
         state: null,
         dueTime: _dueTime,
-        period: _period);
+        period: _period1);
 
-      _logger.LogInformation($"Timer registered.");
+      _timer2 = RegisterTimer(
+        asyncCallback: Timer2Callback,
+        state: null,
+        dueTime: _dueTime,
+        period: _period2);
+
+      _logger.LogInformation($"Timers registered.");
 
       await base.OnActivateAsync();
     }
 
-    private Task TimerCallback(object argument)
+    private async Task Timer1Callback(object argument)
     {
-      if(_ticksNeeded > 0)
+      if(_ticksNeeded1 > 0)
       {
-        _ticksNeeded--;
+        _ticksNeeded1--;
 
-        _logger.LogInformation($"Hello grain timer tick.");
+        _logger.LogInformation($"{DateTime.Now.ToLongTimeString()} - Hello grain timer 1 tick.");
+
+        await Task.Delay(2000);
       }
       else
       {
-        _timer.Dispose();
+        _timer1.Dispose();
 
-        _logger.LogInformation($"Timer no longer needed.");
+        _logger.LogInformation($"{DateTime.Now.ToLongTimeString()} - Timer 1 no longer needed.");
+      }
+    }
+
+    private Task Timer2Callback(object argument)
+    {
+      if(_ticksNeeded2 > 0)
+      {
+        _ticksNeeded2--;
+
+        _logger.LogInformation($"{DateTime.Now.ToLongTimeString()} - Hello grain timer 2 tick.");
+      }
+      else
+      {
+        _timer2.Dispose();
+
+        _logger.LogInformation($"{DateTime.Now.ToLongTimeString()} - Timer 2 no longer needed.");
       }
 
       return Task.CompletedTask;
