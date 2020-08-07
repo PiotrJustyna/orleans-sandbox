@@ -17,7 +17,7 @@
     "yzhang.markdown-all-in-one"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000],
+	"forwardPorts": [5432],
 	// [Optional] To reuse of your local HTTPS dev cert, first export it locally using this command:
 	//  * Windows PowerShell:
 	//     dotnet dev-certs https --trust; dotnet dev-certs https -ep "$env:USERPROFILE/.aspnet/https/aspnetapp.pfx" -p "SecurePwdGoesHere"
