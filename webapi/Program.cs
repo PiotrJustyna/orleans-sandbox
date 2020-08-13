@@ -30,7 +30,8 @@ namespace Webapi
               options.ClusterId = "dev";
               options.ServiceId = "HelloWorldApp";
             })
-            .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback);
+            .Configure<EndpointOptions>(options => options.AdvertisedIPAddress = IPAddress.Loopback)
+            .AddNewRelicTelemetryConsumer();
         });
   }
 }

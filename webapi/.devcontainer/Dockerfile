@@ -80,3 +80,10 @@ ENV DEBIAN_FRONTEND=dialog
 # 2020-05-11 PJ:
 # A custom piece of code resolving this category of issues: https://github.com/dotnet/sdk/issues/9180
 RUN mkdir -p '/usr/local/share/dotnet/sdk/NuGetFallbackFolder'
+
+ENV CORECLR_ENABLE_PROFILING=1
+ENV CORECLR_PROFILER={36032161-FFC0-4B61-B559-F6C5D41BAE5A}
+ENV CORECLR_PROFILER_PATH=newrelic-netcore20-agent/libNewRelicProfiler.so
+ENV CORECLR_NEWRELIC_HOME=newrelic-netcore20-agent/
+ENV NEW_RELIC_LICENSE_KEY=[YOUR_LICENSE_KEY_HERE]
+ENV NEW_RELIC_APP_NAME=orleans-sandbox
